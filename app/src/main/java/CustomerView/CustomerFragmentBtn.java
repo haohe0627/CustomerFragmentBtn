@@ -12,10 +12,6 @@ import android.widget.FrameLayout;
 
 import com.example.hh.customerfragmentbtn.R;
 
-import java.util.zip.Inflater;
-
-import butterknife.ButterKnife;
-
 /**
  * Created by Administrator on 2017/3/17 0017.
  */
@@ -26,26 +22,33 @@ public class CustomerFragmentBtn extends FrameLayout {
     private Fragment fragment;
     private Context context;
 
-    public CustomerFragmentBtn(@NonNull Context context) {
+    public CustomerFragmentBtn( Context context) {
         super(context);
         this.context = context;
         init();
     }
 
-    public CustomerFragmentBtn(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public CustomerFragmentBtn(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
         init();
+        initXML(attrs);
     }
 
-    public CustomerFragmentBtn(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
+    public CustomerFragmentBtn(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.context = context;
         init();
+        initXML(attrs);
     }
 
     private void init(){
-        LayoutInflater.from(context).inflate(R.layout.customer_btn, this, true );
+        LayoutInflater.from(context).inflate(R.layout.customer_btn, this, true);
+
+    }
+
+    private void initXML(AttributeSet attributeSet){
+
     }
 
     public Class<?> getmClass() {
