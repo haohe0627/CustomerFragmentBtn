@@ -1,22 +1,28 @@
-package CustomerView;
+package com.example.hh.application.CustomerView;
 
 import android.content.Context;
-import android.support.annotation.AttrRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.StyleRes;
+import android.content.res.TypedArray;
 import android.support.v4.app.Fragment;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
-import com.example.hh.customerfragmentbtn.R;
+import com.example.hh.application.R;
+
+import org.w3c.dom.Text;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Administrator on 2017/3/17 0017.
  */
 
 public class CustomerFragmentBtn extends FrameLayout {
+
+    @BindView(R.id.txt)
+    TextView txt;
 
     private Class<?> mClass;
     private Fragment fragment;
@@ -44,11 +50,15 @@ public class CustomerFragmentBtn extends FrameLayout {
 
     private void init(){
         LayoutInflater.from(context).inflate(R.layout.customer_btn, this, true);
-
+        ButterKnife.bind(this, this);
     }
 
     private void initXML(AttributeSet attributeSet){
+        TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.customer_frag_btn);
+        if (a.hasValue(R.styleable.customer_frag_btn_text))
+            txt.setText(a.getString(R.styleable.customer_frag_btn_text));
 
+        a.recycle();
     }
 
     public Class<?> getmClass() {

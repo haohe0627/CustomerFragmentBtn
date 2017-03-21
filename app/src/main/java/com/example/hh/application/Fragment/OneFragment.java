@@ -1,4 +1,4 @@
-package Fragment;
+package com.example.hh.application.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.hh.customerfragmentbtn.R;
+import com.example.hh.application.R;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by Administrator on 2017/3/17 0017.
@@ -22,14 +25,14 @@ public class OneFragment extends Fragment {
      super.onCreateView有没有调用都无所谓，因为super.onCreateView是直接返回null的。
      */
 
-    protected FragmentActivity fgActivity;
-    protected View rootView;
+    private FragmentActivity fgActivity;
+    private View rootView;
+    private Unbinder unbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.fgActivity = getActivity();
-
 
     }
 
@@ -45,10 +48,15 @@ public class OneFragment extends Fragment {
         }else{
 
             rootView = inflater.inflate(R.layout.page_one, container, false);
-
+            unbinder = ButterKnife.bind(this, rootView);
         }
 
         return rootView;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+    }
 }
