@@ -5,12 +5,11 @@ import android.content.res.TypedArray;
 import android.support.v4.app.Fragment;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.hh.application.R;
-
-import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,13 +49,13 @@ public class CustomerFragmentBtn extends FrameLayout {
 
     private void init(){
         LayoutInflater.from(context).inflate(R.layout.customer_btn, this, true);
-        ButterKnife.bind(this, this);
+        txt  = (TextView)findViewById(R.id.txt);
     }
 
     private void initXML(AttributeSet attributeSet){
-        TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.customer_frag_btn);
-        if (a.hasValue(R.styleable.customer_frag_btn_text))
-            txt.setText(a.getString(R.styleable.customer_frag_btn_text));
+        TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.CustomerFragmentBtn);
+        if (a.hasValue(R.styleable.CustomerFragmentBtn_text))
+            txt.setText(a.getString(R.styleable.CustomerFragmentBtn_text));
 
         a.recycle();
     }

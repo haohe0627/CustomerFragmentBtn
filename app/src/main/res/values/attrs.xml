@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="customer_frag_btn">
-        <attr name="text" format="string"/>
+    <declare-styleable name="CustomerFragmentBtn">
+        <attr name="text" format="string|reference"/>
         <attr name="textSize" format="dimension"/>
     </declare-styleable>
 </resources>
