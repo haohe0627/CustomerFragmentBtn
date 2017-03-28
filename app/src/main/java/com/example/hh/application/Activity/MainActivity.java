@@ -77,7 +77,9 @@ public class MainActivity extends BaseFragmentActivity {
 
         if(newBtn != null){
             if(newBtn.getFragment() == null){
-
+                Fragment fragment = Fragment.instantiate(this, newBtn.getmClass().getName(), null); //实例新的Fragment
+                ft.add(R.id.content, fragment, newBtn.getmClass().getName());
+                newBtn.setFragment(fragment);
             }else{
                 ft.attach(newBtn.getFragment());
             }

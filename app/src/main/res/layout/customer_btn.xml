@@ -14,7 +14,7 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:textColor="#000"
+        android:textColor="@color/cus_btn_sel"
         android:textSize="15sp"
         tools:text="FG-NO" />
 </LinearLayout>

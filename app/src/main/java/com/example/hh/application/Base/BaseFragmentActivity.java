@@ -1,10 +1,12 @@
 package com.example.hh.application.Base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
 
@@ -25,6 +27,11 @@ public abstract class BaseFragmentActivity extends AppCompatActivity{
         setContentView(getLayoutId());
         unbinder = ButterKnife.bind(this);
         init();
+    }
+
+    @Override
+    public View onCreateView(String name, Context context, AttributeSet attrs) {
+        return super.onCreateView(name, context, attrs);
     }
 
     @Override
