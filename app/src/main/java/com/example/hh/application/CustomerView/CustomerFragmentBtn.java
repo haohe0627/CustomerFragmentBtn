@@ -48,7 +48,7 @@ public class CustomerFragmentBtn extends FrameLayout {
     }
 
     private void init(){
-        LayoutInflater.from(context).inflate(R.layout.customer_btn, this, true);
+        LayoutInflater.from(context).inflate(R.layout.customer_btn, this, true); //一定用这个
         txt  = (TextView)findViewById(R.id.txt);
     }
 
