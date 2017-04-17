@@ -34,6 +34,8 @@ public class MainActivity extends BaseFragmentActivity {
 
     @Override
     protected void init() {
+
+        //按钮绑定设置class属性
         btn1.setmClass(OneFragment.class);
         btn2.setmClass(SecondFragment.class);
         btn3.setmClass(ThirdFragment.class);
@@ -71,17 +73,17 @@ public class MainActivity extends BaseFragmentActivity {
 
         if(oldBtn != null){
             if(oldBtn.getFragment() != null){
-                ft.detach(oldBtn.getFragment());
+                ft.detach(oldBtn.getFragment());    //解绑
             }
         }
 
         if(newBtn != null){
             if(newBtn.getFragment() == null){
                 Fragment fragment = Fragment.instantiate(this, newBtn.getmClass().getName(), null); //实例新的Fragment
-                ft.add(R.id.content, fragment, newBtn.getmClass().getName());
+                ft.add(R.id.content, fragment, newBtn.getmClass().getName());   //增加
                 newBtn.setFragment(fragment);
             }else{
-                ft.attach(newBtn.getFragment());
+                ft.attach(newBtn.getFragment()); //添加绑定
             }
         }
 

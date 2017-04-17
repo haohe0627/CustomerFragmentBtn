@@ -53,6 +53,7 @@ public class CustomerFragmentBtn extends FrameLayout {
     }
 
     private void initXML(AttributeSet attributeSet){
+        //获取在界面上的属性值 如果有则赋值
         TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.CustomerFragmentBtn);
         if (a.hasValue(R.styleable.CustomerFragmentBtn_text))
             txt.setText(a.getString(R.styleable.CustomerFragmentBtn_text));
